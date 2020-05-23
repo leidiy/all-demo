@@ -14,6 +14,13 @@
         </plugin>
     </plugins>
 
+    <plugins>
+        <plugin interceptor="com.example.all.demo.mybatis.mybatis.plugins.CreateObjInterceptor">
+            <property name="property" value="value"/>
+            <property name="key" value="val"/>
+        </plugin>
+    </plugins>
+
     <environments default="development">
         <environment id="development">
             <transactionManager type="JDBC"/>

@@ -31,6 +31,7 @@ class AllDemoApplicationTests {
         final SqlSession session = sessionFactory.openSession(ExecutorType.BATCH);
     }
 
+<<<<<<< HEAD
 
     /**
      * mybatis两种方式实现 批量操作
@@ -38,4 +39,28 @@ class AllDemoApplicationTests {
      * 2) 整合spring，注入sqlsession 指定 executor type batch
      *
      */
+=======
+    @Test
+    void testSave() throws IOException {
+        String mybatisConfig = "mybatis-config.xml";
+        InputStream inputStream = Resources.getResourceAsStream(mybatisConfig);
+        SqlSessionFactory sessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
+        SqlSession sqlSession = sessionFactory.openSession();
+        MybatisMapper mapper = sqlSession.getMapper(MybatisMapper.class);
+        Person person = new Person();
+        person.setAge(12);
+        mapper.update(person);
+    }
+
+    @Test
+    void testSelectOne() throws IOException {
+        String mybatisConfig = "mybatis-config.xml";
+        InputStream inputStream = Resources.getResourceAsStream(mybatisConfig);
+        SqlSessionFactory sessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
+        SqlSession sqlSession = sessionFactory.openSession();
+        MybatisMapper mapper = sqlSession.getMapper(MybatisMapper.class);
+        mapper.selectOne(1);
+    }
+
+>>>>>>> 3fea7ca2589161762e9a0cefc24b1fe069955898
 }
