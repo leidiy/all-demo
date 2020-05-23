@@ -4,4 +4,10 @@
     <select id="selectList" resultType="com.example.all.demo.mybatis.builder.Person">
         SELECT * FROM pepole;
     </select>
+    <insert id="update" parameterType="com.example.all.demo.mybatis.builder.Person">
+        INSERT INTO pepole(age,name,address) values (#{age},#{name},#{address,jdbcType=VARCHAR});
+    </insert>
+    <select id="selectOne" resultType="com.example.all.demo.mybatis.builder.Person">
+        SELECT * FROM pepole WHERE id = #{id}
+    </select>
 </mapper>

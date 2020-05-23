@@ -11,8 +11,20 @@ import java.util.List;
 @Mapper
 public interface MybatisMapper {
 
-    /** 查询所有
+    /**
+     * 查询所有
+     *
      * @return 所有结果
      */
     List<Person> selectList();
+
+
+    /**
+     * @param id
+     * @return
+     */
+    Person selectOne(Integer id);
+
+
+    int update(Person person);
 }

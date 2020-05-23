@@ -29,4 +29,26 @@ class AllDemoApplicationTests {
         System.out.println(people2);
     }
 
+    @Test
+    void testSave() throws IOException {
+        String mybatisConfig = "mybatis-config.xml";
+        InputStream inputStream = Resources.getResourceAsStream(mybatisConfig);
+        SqlSessionFactory sessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
+        SqlSession sqlSession = sessionFactory.openSession();
+        MybatisMapper mapper = sqlSession.getMapper(MybatisMapper.class);
+        Person person = new Person();
+        person.setAge(12);
+        mapper.update(person);
+    }
+
+    @Test
+    void testSelectOne() throws IOException {
+        String mybatisConfig = "mybatis-config.xml";
+        InputStream inputStream = Resources.getResourceAsStream(mybatisConfig);
+        SqlSessionFactory sessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
+        SqlSession sqlSession = sessionFactory.openSession();
+        MybatisMapper mapper = sqlSession.getMapper(MybatisMapper.class);
+        mapper.selectOne(1);
+    }
+
 }
