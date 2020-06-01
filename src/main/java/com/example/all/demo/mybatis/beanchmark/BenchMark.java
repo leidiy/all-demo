@@ -23,9 +23,9 @@ import java.util.concurrent.TimeUnit;
 // Fork进行的数目
 @Fork(2)
 // 先预热4轮
-@Warmup(iterations = 4)
+@Warmup(iterations = 1)
 // 进行10轮测试
-@Measurement(iterations = 10)
+@Measurement(iterations = 2)
 public class BenchMark {
 
 
