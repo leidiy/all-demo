@@ -12,6 +12,7 @@ import java.sql.SQLException;
  * 用于处理paramter 设值，以及resultHandler封装返回值
  * 1)封装查询返回值可以在resultMap中的每个字段result中使用typeHandler
  * 2) 插入更新的时候都可以使用自定义的typeHandler
+ * @author 72082934
  */
 public class MyTypeHandler implements TypeHandler<Object> {
     @Override

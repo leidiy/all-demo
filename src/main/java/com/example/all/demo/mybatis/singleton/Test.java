@@ -10,7 +10,7 @@ import java.util.concurrent.Executors;
  *
  * @author 72082934
  */
-public class RuntimeTest {
+public class Test {
 
     public static void main(String[] args) {
         SingletonManager manager = new SingletonManager();

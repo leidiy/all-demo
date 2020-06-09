@@ -1,6 +1,8 @@
 package com.example.all.demo.mybatis.privateclass;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 public class A {
@@ -9,8 +11,9 @@ public class A {
     private A.B b;
 
     @Data
-    public class B {
-
+    @AllArgsConstructor
+    @NoArgsConstructor
+    static class B {
         private String name;
     }
 }
