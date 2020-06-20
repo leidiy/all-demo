@@ -17,8 +17,8 @@ public abstract class AbstractCalculator {
      * @return
      */
     public final int calculate(String exp, String opt) {
-        int array[] = split(exp, opt);
-        return calculate(array[0], array[1]);
+        int array[] = this.split(exp, opt);
+        return this.calculate(array[0], array[1]);
     }
 
     public int[] split(String exp, String opt) {
@@ -37,7 +37,7 @@ public abstract class AbstractCalculator {
      * @param num2
      * @return
      */
-    abstract public int calculate(int num1, int num2);
+    public abstract int calculate(int num1, int num2);
 
 
 }
